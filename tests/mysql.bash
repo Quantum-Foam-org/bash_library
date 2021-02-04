@@ -15,6 +15,8 @@ sql_cmd "SELECT * FROM spidered_site"
 
 
 function num_rows_test {
+    print_heading "Number of Rows Test"
+    
     get_numrows
 
     if [ $MYSQL_NUM_ROWS -ne 326 ]
@@ -26,6 +28,7 @@ function num_rows_test {
 }
 
 function row_test {
+    print_heading "Row Test"
     
     # test for row 
     get_row "$1"
@@ -43,11 +46,16 @@ function row_test {
             print_success "Row field value expected"
         fi
         
+        echo $'\n'
+        print_info "Contents of row"
         declare -pa MYSQL_ROW
+        echo $'\n'
     fi
 }
 
 function undefined_row_test {
+    print_heading "Undefined Row Test"
+    
     # test for undefined row
     get_row "326"
 
@@ -59,6 +67,7 @@ function undefined_row_test {
     else
         print_success "Row was not set"
     fi
+    echo $'\n'
 }
 
 row_test "0" "1813"
