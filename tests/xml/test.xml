@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bash_lib>
+	<bash_node>Text of Bash Node</bash_node>
+    <bash_node>Text of Second Bash Node</bash_node>
+    <bash_node>Text of Third Bash Node</bash_node>
+</bash_lib>
