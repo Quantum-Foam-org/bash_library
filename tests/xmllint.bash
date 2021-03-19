@@ -32,9 +32,9 @@ function test_node_count {
     
     if [[ $XMLOUTPUT -ne 3 ]]
     then
-        print_error "Test for bash node contents failed"
+        print_error "Test for bash node count failed"
     else
-        print_success "Test for bash node succeeded"
+        print_success "Test for bash node count succeeded"
     fi
     
     echo $'\n'
