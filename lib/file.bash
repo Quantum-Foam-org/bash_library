@@ -1,6 +1,6 @@
 FILE=""
 
-function open_file {
+function read_file {
     RETURN=0
     
     if [ ! -f $1 ]
@@ -11,4 +11,18 @@ function open_file {
     FILE=`< $1`
     
     return RETURN
+}
+
+function write_file {
+    RETURN=0
+    
+    echo $1;
+    echo "$1" >> "$2"
+    
+    if [ ! -f $2 ]
+    then
+	    RETURN=1
+    fi
+
+    return $RETURN
 }

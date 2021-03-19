@@ -6,9 +6,9 @@ XMLOUTPUT=""
 function xmllint_xpath {
     RES=0
     
-    XMLCMD=`printf "%s %s --xpath %s" "$XMLLINT_CMD" "$XMLFILE" "$1"`
+    XMLCMD=`printf "%s %s --xpath \"%s\"" "$XMLLINT_CMD" "$XMLFILE" "$1"`
 
-    XMLOUTPUT=`$XMLCMD`
+    XMLOUTPUT=`bash -c "$XMLCMD"`
 
     if [ $? -ne 0 ]
     then
